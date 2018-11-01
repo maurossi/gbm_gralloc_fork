@@ -29,7 +29,8 @@ LOCAL_SRC_FILES := \
 LOCAL_SHARED_LIBRARIES := \
 	libgbm \
 	liblog \
-	libcutils
+	libcutils \
+	libdrm
 
 LOCAL_STATIC_LIBRARIES := libdrm_framebuffer
 
