@@ -86,6 +86,17 @@ static int gbm_mod_perform(const struct gralloc_module_t *mod, int op, ...)
 			err = 0;
 		}
 		break;
+	case GRALLOC_MODULE_PERFORM_ENTER_VT:
+		{
+			err = gralloc_gbm_set_master(dmod->gbm);
+		}
+		break;
+	case GRALLOC_MODULE_PERFORM_LEAVE_VT:
+		{
+			gralloc_gbm_drop_master(dmod->gbm);
+			err = 0;
+		}
+		break;
 	default:
 		err = -EINVAL;
 		break;

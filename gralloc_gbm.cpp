@@ -334,6 +334,27 @@ struct gbm_device *gbm_dev_create(bool master)
 }
 
 /*
+ * Set as the master of a GBM device.
+ */
+int gralloc_gbm_set_master(struct gbm_device *gbm)
+{
+	ALOGD("set master");
+	int fd = gbm_device_get_fd(gbm);
+	drmSetMaster(fd);
+
+	return 0;
+}
+
+/*
+ * Drop from the master of a GBM device.
+ */
+void gralloc_gbm_drop_master(struct gbm_device *gbm)
+{
+	int fd = gbm_device_get_fd(gbm);
+	drmDropMaster(fd);
+}
+
+/*
  * Register a buffer handle.
  */
 int gralloc_gbm_handle_register(buffer_handle_t _handle, struct gbm_device *gbm)

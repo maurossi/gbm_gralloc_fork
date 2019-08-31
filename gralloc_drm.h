@@ -34,6 +34,9 @@ enum {
 	 *	   int *fd);
 	 */
 	GRALLOC_MODULE_PERFORM_GET_DRM_FD                = 0x40000002,
+	GRALLOC_MODULE_PERFORM_ENTER_VT                  = 0x80000005,
+	GRALLOC_MODULE_PERFORM_LEAVE_VT                  = 0x80000006,
+
 };
 
 #ifdef __cplusplus

@@ -49,6 +49,9 @@ int gralloc_gbm_bo_unlock(buffer_handle_t handle);
 struct gbm_device *gbm_dev_create(bool master);
 void gbm_dev_destroy(struct gbm_device *gbm);
 
+int gralloc_gbm_set_master(struct gbm_device *gbm);
+void gralloc_gbm_drop_master(struct gbm_device *gbm);
+
 #ifdef __cplusplus
 }
 #endif
